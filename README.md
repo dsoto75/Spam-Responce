@@ -1,5 +1,6 @@
 # Spam-Responce
 Outlook VBA code to reply to spam email without personal signature
+
 Sub ReplytoSpam()
 Dim Item As Outlook.MailItem
 Set Item = Application.ActiveExplorer.Selection.Item(1)
@@ -10,12 +11,12 @@ Dim olSelection As Word.Selection
 
 'Begin reply to active email routein
 
-Set myReply = Item.Reply
-myReply.Display
-
 If Item.Subject <> "Unsubscribe" Then
 
 Item.Subject = "Unsubscribe"
+
+Set myReply = Item.Reply
+myReply.Display
 
 End If
 
